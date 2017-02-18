@@ -1,11 +1,11 @@
 var express = require('express');
 var app = express();
 var multer  = require('multer');
-var upload = multer({ dest: 'uploads/' });
+var upload = multer();
 var path = require("path");
 
 app.post('/', upload.single('datei'), function (req, res, next) {
-    console.log("file incoming");
+    console.log("file came in");
   res.send({
       "size": req.file.size
   });
